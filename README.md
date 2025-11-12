@@ -1,8 +1,11 @@
-Here is a `README.md` file for your project.
 
------
 
-# Cache Simulator in C
+<h1 align="center">Cache Simulator in C</h1> 
+
+<div align="center" >
+  <img src="./assets/thumbnail.png">
+</div>
+
 
 This project is a flexible cache simulator written in C. It is designed to simulate different cache organizations and replacement policies to analyze their performance based on a given memory access trace.
 
@@ -26,7 +29,7 @@ To compile the project, navigate to the root `cache-simulator/` directory in you
 make
 ```
 
-This will read the `Makefile`, compile all necessary files, and place the final executable named `cache_simulator` inside the `build/` directory.
+This will read the `Makefile`, compile all necessary files, and place the final executable named `cache_simulator.
 
 ### 2\. Cleaning the Project
 
@@ -45,7 +48,7 @@ The program is run from the command line with five required arguments.
 ### Syntax
 
 ```bash
-./build/cache_simulator <cache_size> <block_size> <associativity> <policy> <trace_file>
+./cache_simulator <cache_size> <block_size> <associativity> <policy> <test_file>
 ```
 
 **Arguments:**
@@ -57,35 +60,38 @@ The program is run from the command line with five required arguments.
       * `N` for N-Way Set-Associative
       * `0` for Fully-Associative (or use the total number of lines)
   * **`<policy>`**: Replacement policy (`LRU` or `FIFO`).
-  * **`<trace_file>`**: Path to the memory trace file (e.g., `data/trace.txt`).
+  * **`<test_file>`**: Path to the memory trace file (e.g., `trace.txt`).
 
 ### 📚 Examples
 
-Here are a few examples using a 1024-byte cache, 64-byte blocks, and the `data/trace.txt` file.
+Here are a few examples using a 1024-byte cache, 64-byte blocks, and the `trace.txt` file.
 
 **Example 1: Direct-Mapped (1-Way) with LRU**
 
 ```bash
-./build/cache_simulator 1024 64 1 LRU data/trace.txt
+./cache_simulator 1024 64 1 LRU trace.txt
 ```
 
 **Example 2: 4-Way Set-Associative with FIFO**
 
 ```bash
-./build/cache_simulator 1024 64 4 FIFO data/trace.txt
+./cache_simulator 1024 64 4 FIFO trace.txt
 ```
 
 **Example 3: Fully-Associative with LRU**
 (A 1024-byte cache with 64-byte blocks has 16 lines. You can either use `16` or `0` for associativity.)
 
 ```bash
-./build/cache_simulator 1024 64 0 LRU data/trace.txt
+./cache_simulator 1024 64 0 LRU trace.txt
 ```
 
 *or*
 
 ```bash
-./build/cache_simulator 1024 64 16 LRU data/trace.txt
+./cache_simulator 1024 64 16 LRU trace.txt
 ```
 
 After running, the simulator will print the final cache statistics to the console.
+
+### Result:
+![result-image](./assets/result.png)
