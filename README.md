@@ -3,7 +3,7 @@
 <h1 align="center">Cache Simulator in C</h1> 
 
 <div align="center" >
-  <img src="./assets/thumbnail.png">
+  <img src="./docs/thumbnail.png">
 </div>
 
 
@@ -94,4 +94,4 @@ Here are a few examples using a 1024-byte cache, 64-byte blocks, and the `trace.
 After running, the simulator will print the final cache statistics to the console.
 
 ### Result:
-![result-image](./assets/result.png)
+![result-image](./docs/result.png)

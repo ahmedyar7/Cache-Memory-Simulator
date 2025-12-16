@@ -37,6 +37,13 @@ static CacheLine* find_victim(Cache* cache, CacheLine* set_start) {
     return victim;
 }
 
+// "This function is responsible for initializing the cache.
+//  It translates the user's raw inputs (like cache size in bytes) 
+// into the specific geometry required for the simulation (number of sets, tag bits, and index bits)
+// and allocates the memory for the cache lines."
+
+
+
 Cache* cache_create(CacheConfig config) {
     Cache* cache = (Cache*)malloc(sizeof(Cache));
     if (!cache) return NULL;
